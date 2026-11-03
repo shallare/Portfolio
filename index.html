@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNSEPTZEROTROIS | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Base styles -->
+    <link rel="stylesheet" href="css/landing.css"> <!-- Bento specific styles -->
+</head>
+
+<body>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+        <i class="ph ph-sun"></i>
+    </button>
+
+    <main class="bento-wrapper">
+        <div class="bento-container">
+
+            <!-- Sidebar / Vertical Text -->
+            <aside class="bento-sidebar">
+                <div class="nav-text"><a href="home.html#about">About</a></div>
+                <div class="nav-text"><a href="home.html#services">Services</a></div>
+                <div class="nav-text"><a href="home.html#experience">Journey</a></div>
+                <div class="nav-text"><a href="home.html#contact">Contact</a></div>
+                <div class="nav-text active">
+                    <p href="#">Portfolio</p>
+                </div>
+            </aside>
+
+            <!-- Grid Layout -->
+            <div class="bento-grid">
+
+                <!-- 1. Profile Card (Large Left) -->
+                <a href="home.html#about" class="grid-item profile-card glass animate-on-scroll delay-100">
+                    <div class="profile-frame">
+                        <img src="assets/images/image.png" alt="Profile" class="profile-pic">
+                    </div>
+                    <div class="profile-info">
+                        <span class="greeting">I'm,</span>
+                        <h2 class="name">UNSEPT<br>ZEROTROIS</h2>
+                        <div class="contact-row">
+                            <span class="email">contact@unseptzerotrois.dev</span>
+                            <div class="icon-circle"><i class="ph ph-envelope"></i></div>
+                        </div>
+                    </div>
+                    <div class="decorative-badge"></div>
+                </a>
+
+                <!-- 2. Header Area -->
+                <div class="grid-item header-area animate-on-scroll delay-100">
+                    <h1 class="giant-text">Portfolio<span class="accent">.</span></h1>
+                </div>
+
+                <!-- 3. Featured Project (Flamingo) -->
+                <a href="home.html#projects" class="grid-item feature-card glass animate-on-scroll delay-200">
+                    <div class="card-bg" style="background-image: url('assets/images/project-placeholder-1.jpg');">
+                    </div> <!-- Placeholder color if img fails -->
+                    <div class="play-btn"><i class="ph ph-play-circle"></i></div>
+                    <div class="corner-icon top-right"><i class="ph ph-arrow-up-right"></i></div>
+                </a>
+
+                <!-- 4. Stats: Projects -->
+                <a href="home.html#projects" class="grid-item stat-card glass green-accent animate-on-scroll delay-300">
+                    <div class="corner-icon top-right"><i class="ph ph-arrow-up-right"></i></div>
+                    <h3 class="stat-number">20+</h3>
+                    <p class="stat-label">Projects</p>
+                </a>
+
+                <!-- 5. Stats: Awards/Skills -->
+                <a href="home.html#services"
+                    class="grid-item stat-card glass purple-accent animate-on-scroll delay-400">
+                    <div class="corner-icon top-right"><i class="ph ph-arrow-up-right"></i></div>
+                    <h3 class="stat-number">15+</h3>
+                    <p class="stat-label">Skills Mastered</p>
+                </a>
+
+                <!-- 6. Clients -->
+                <a href="home.html#contact" class="grid-item client-card glass dark-accent animate-on-scroll delay-500">
+                    <div class="corner-icon top-right"><i class="ph ph-arrow-up-right"></i></div>
+                    <i class="ph ph-users-three big-icon"></i>
+                    <p class="label">Clients</p>
+                </a>
+
+                <!-- 7. 3D Abstract (Removed to merge with Job Success) -->
+
+                <!-- 8. Global Awards -->
+                <a href="home.html#experience"
+                    class="grid-item stat-card glass yellow-accent animate-on-scroll delay-500">
+                    <div class="corner-icon top-right"><i class="ph ph-arrow-up-right"></i></div>
+                    <h3 class="stat-number">100%</h3>
+                    <p class="stat-label">Job Success.</p>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

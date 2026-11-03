@@ -1,0 +1,436 @@
+/* Bento Grid Landing Specific Styles */
+
+body {
+    background-color: var(--bg-dark);
+    /* Uses theme variable */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* No scroll on landing, just the grid */
+}
+
+/* On mobile, allow scroll */
+@media (max-width: 1024px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+        display: block;
+        padding-top: 40px;
+    }
+}
+
+.bento-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    height: 90vh;
+    padding: 20px;
+    background: var(--bg-card);
+    /* Uses theme variable */
+    border-radius: 40px;
+    display: flex;
+    position: relative;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.bento-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+/* --- Sidebar --- */
+.bento-sidebar {
+    width: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    /* Bottom to top */
+    justify-content: space-between;
+    padding: 40px 0;
+    border-right: 1px solid var(--glass-border);
+}
+
+.nav-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.nav-text a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+}
+
+.nav-text a:hover,
+.nav-text.active a {
+    color: var(--text-main);
+}
+
+/* --- Grid --- */
+/* --- Exact Bento Grid Layout --- */
+
+.bento-grid {
+    flex: 1;
+    display: grid;
+    /* 
+       4 Columns: 
+       Col 1: Profile (Large)
+       Col 2: Flamingo Left / Grey
+       Col 3: Flamingo Right / Black
+       Col 4: Stats / Yellow
+    */
+    grid-template-columns: 1.4fr 1fr 1fr 0.8fr;
+
+    /* 
+       4 Rows:
+       Row 1: Header (Auto height)
+       Row 2: Stat Green (Top half of Flamingo)
+       Row 3: Stat Purple (Bottom half of Flamingo)
+       Row 4: Bottom Row (Grey, Black, Yellow)
+    */
+    grid-template-rows: 80px 1fr 1fr 1.2fr;
+    gap: 20px;
+    height: 100%;
+    padding: 20px;
+}
+
+/* --- Grid Placements --- */
+
+/* Header Area: Portfolio Title */
+/* Header Area: Portfolio Title */
+.header-area {
+    grid-column: 2 / 5;
+    /* Full width top */
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center it */
+    width: 100%;
+}
+
+.giant-text {
+    font-family: var(--font-heading);
+    font-size: 9rem;
+    /* Slightly smaller but still giant */
+    font-weight: 800;
+    /* Thicker */
+    line-height: 0.8;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    /* Tighter for impact */
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    /* Make it massive */
+}
+
+/* Profile Card (Left Big) */
+.profile-card {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    /* Spans full height */
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    border: none;
+    position: relative;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+.profile-frame {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 1);
+    /* Solid white */
+    padding: 10px;
+    margin: 0 auto 40px;
+    position: relative;
+    transform: translate(-20px, 30px);
+}
+
+.profile-frame::after {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    /* Highly visible white */
+    border-radius: 50%;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    object-position: top;
+    /* Align to top to show hair */
+    /* B&W style from image */
+}
+
+.greeting {
+    font-size: 2rem;
+    font-weight: 300;
+    display: block;
+    margin-bottom: -10px;
+    opacity: 0.8;
+}
+
+.name {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.contact-row {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dotted rgba(255, 255, 255, 0.4);
+    padding-top: 20px;
+}
+
+.email {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Feature Card (Flamingo/Art) */
+.feature-card {
+    grid-column: 2 / 4;
+    /* Expanded to double width */
+    grid-row: 2 / 4;
+    /* Takes middle chunk */
+    background: #2a2a2e;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover .card-bg {
+    transform: scale(1.1);
+}
+
+.card-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+    background-color: #333;
+    /* fallback */
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    /* Placeholder Gradient */
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Stats Cards */
+.stat-card,
+.client-card,
+.abstract-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    color: #111;
+    /* Dark text on colored cards */
+}
+
+/* Project Count (Green) */
+.green-accent {
+    grid-column: 4 / 5;
+    /* Moved to right col */
+    grid-row: 2 / 3;
+    background: #a7f3d0;
+    /* Soft Green */
+}
+
+/* Awards (Purple) */
+.purple-accent {
+    grid-column: 4 / 5;
+    /* Moved to right col */
+    grid-row: 3 / 4;
+    background: #c084fc;
+    /* Purple */
+    color: white;
+}
+
+/* Clients (Dark Grey) */
+.client-card.dark-accent {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    background: #3f3f46;
+    color: white;
+}
+
+.abstract-card {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+    background: #000000;
+}
+
+.yellow-accent {
+    grid-column: 3 / 5;
+    grid-row: 4 / 5;
+    background: #FCD34D;
+    color: #000000;
+    border-radius: 32px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* New Sections Row 5 (Omitted as per revert) */
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decorative-badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 90px;
+    height: 90px;
+    animation: spin 10s linear infinite;
+}
+
+.decorative-badge::before {
+    content: 'MY PORTFOLIO VLOG • 2026 •';
+    /* Pseudo text ring */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Common Card Styles */
+.grid-item {
+    border-radius: 24px;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.grid-item:hover {
+    transform: scale(1.02);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.corner-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.big-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bento-wrapper {
+        height: auto;
+        border-radius: 0;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .bento-sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 5px;
+    }
+
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-card {
+        height: 600px;
+    }
+
+    .feature-card {
+        height: 300px;
+    }
+
+    .green-accent,
+    .purple-accent {
+        height: 150px;
+    }
+}
